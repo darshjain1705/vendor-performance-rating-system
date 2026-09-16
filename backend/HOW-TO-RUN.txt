@@ -1,0 +1,80 @@
+VPR — how to run it (no typing commands)
+=========================================
+
+You need two things running: the database (MySQL) and the backend
+server (Node). Then you open the dashboard in your browser.
+
+STEP 1 — Create the database, using MySQL Workbench (GUI)
+-----------------------------------------------------------
+1. Open MySQL Workbench and connect to your local MySQL server.
+2. Click the "Create a new schema" icon (or File > New Query Tab, then
+   type: CREATE DATABASE vpr;  and click the lightning-bolt "Execute"
+   button).
+3. In the schema list on the left, double-click "vpr" to select it as
+   the active schema.
+4. Go to File > Open SQL Script..., pick "schema.sql" from this folder,
+   and click the lightning-bolt "Execute" button to run the whole file.
+   You should see the vendors / purchase_orders / evaluators / ratings
+   tables appear on the left once it finishes.
+
+STEP 2 — One-time setup, using the batch file
+-----------------------------------------------------------
+1. In this folder, double-click "SETUP-ONCE.bat".
+2. A black window opens and a Notepad window pops up showing a new
+   ".env" file. Change the DB_PASSWORD line to your actual MySQL
+   password, then press Ctrl+S to save, and close Notepad.
+3. Go back to the black window and press any key to continue — it will
+   install dependencies, import the 345 sample purchase orders, and
+   create starter login accounts. This only needs to be done once.
+4. When it says "Setup complete!", press any key to close the window.
+
+   If it stops with an error instead: the most common cause is MySQL
+   not running, or the password in .env being wrong. Fix and re-run
+   SETUP-ONCE.bat (it's safe to run more than once).
+
+STEP 3 — Start the server, using the batch file
+-----------------------------------------------------------
+1. Double-click "START-SERVER.bat".
+2. Leave that window open — it IS the server. Closing it stops
+   everything. You'll see "VPR backend running on http://localhost:5000".
+
+STEP 4 — Open the dashboard
+-----------------------------------------------------------
+1. Go to the VPR_updated_fixed folder (the frontend) and double-click
+   "vendor_rating.html" — it opens in your browser.
+2. Log in with one of the starter accounts SETUP-ONCE.bat created:
+
+     username: admin           password: admin123
+     username: scm_eval        password: scm123
+     username: scm_appr        password: scm123
+     username: edrc_eval       password: edrc123
+     username: edrc_appr       password: edrc123
+     username: quality_eval    password: quality123
+     username: quality_appr    password: quality123
+     username: operation_eval  password: operation123
+     username: operation_appr  password: operation123
+
+   (These are printed in the SETUP-ONCE.bat window too. Change them
+   before using this with real data — log in as admin, then use
+   "POST /api/evaluators" to set a new password for each account, or
+   edit them directly in MySQL Workbench.)
+
+As admin: adding and assigning POs
+-----------------------------------------------------------
+Once logged in as "admin", two extra buttons appear on the dashboard:
+
+  "+ Add PO" (bottom-right, green) — fill in the form to create a new
+  purchase order. It appears in the dashboard immediately.
+
+  "Assign PO" (bottom-left, purple) — type an exact PO number, pick a
+  category (SCM/EDRC/Quality/Operation) and period (H1/H2), and
+  optionally pick one named evaluator and/or approver from the
+  dropdowns. Leave either dropdown on "whole team" if you don't want
+  to restrict it to one person. Once assigned, only that person (or
+  admin) can rate/approve that PO's block for that category+period —
+  everyone else on the team is blocked from it.
+
+Every time you want to use the dashboard later
+-----------------------------------------------------------
+You only need Step 3 (double-click START-SERVER.bat) and Step 4
+(double-click vendor_rating.html) — Steps 1 and 2 are one-time.
