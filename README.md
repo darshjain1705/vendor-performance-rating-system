@@ -11,6 +11,19 @@ as a portfolio project.
 > sample data — generated to match the original schema so the app runs and
 > demos correctly with no real business or personal data involved.
 
+## Screenshots
+
+| Login | Portfolio overview |
+|---|---|
+| ![Login screen](docs/screenshots/login.png) | ![Portfolio overview with tier distribution, category ratings, and project performance charts](docs/screenshots/portfolio-overview.png) |
+
+| Vendor scorecard | Team workload |
+|---|---|
+| ![Vendor performance scorecard with filters and matched PO items](docs/screenshots/vendor-scorecard.png) | ![Team workload showing evaluation progress by team and by evaluator](docs/screenshots/team-workload.png) |
+
+**Vendor contact directory**
+![Vendor details table with synthetic contacts](docs/screenshots/vendor-details.png)
+
 ## Stack
 
 - **Backend** (`backend/`): Node.js + Express, MySQL, JWT auth, bcrypt

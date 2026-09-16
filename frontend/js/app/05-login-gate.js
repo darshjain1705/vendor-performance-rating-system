@@ -295,9 +295,9 @@ window.canApproveCategoryForPO = function (catId, poId, period) {
   overlay.innerHTML = `
     <div class="lg-card" id="lg-card">
       <div class="lg-brand">
-        <div class="lg-mark">L&amp;T</div>
+        <div class="lg-mark">BG</div>
         <div class="lg-brand-text">
-          <p class="lg-eyebrow">L&amp;T Renewable Energy</p>
+          <p class="lg-eyebrow">BrightGrid Renewable Energy</p>
           <h2 class="lg-title">Vendor Rating Dashboard</h2>
         </div>
       </div>

@@ -439,7 +439,7 @@ function printVendorReport(filterCode) {
         <section class="pv-page" style="font-family:var(--fn);color:#191c1f;padding-bottom:6mm;">
           <div class="pv-keep" style="display:flex;justify-content:space-between;align-items:flex-start;border-bottom:2px solid #14171a;padding-bottom:8px;margin-bottom:14px;">
             <div>
-              <div style="font-family:var(--hd);font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#0072bc;">L&amp;T Renewable Energy</div>
+              <div style="font-family:var(--hd);font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#0072bc;">BrightGrid Renewable Energy</div>
               <div style="font-family:var(--hd);font-size:22px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;">Vendor Rating Report</div>
             </div>
             <div style="text-align:right;font-size:11px;color:#5e656d;font-family:var(--mono);line-height:1.7;">
@@ -484,7 +484,7 @@ function printVendorReport(filterCode) {
           </div>
 
           <div style="margin-top:14px;font-size:9.5px;color:#888f97;border-top:1px solid #bcc1c6;padding-top:6px;line-height:1.5;">
-            Scores are weighted ratings (SCM 30% · EDRC 25% · Product Quality 25% · Operation 20%), computed from rated parameters. Overall = average of the rated half-years (H1, H2). Generated from the L&amp;T Procurement Control dashboard.
+            Scores are weighted ratings (SCM 30% · EDRC 25% · Product Quality 25% · Operation 20%), computed from rated parameters. Overall = average of the rated half-years (H1, H2). Generated from the BrightGrid Procurement Control dashboard.
           </div>
         </section>`);
     });
